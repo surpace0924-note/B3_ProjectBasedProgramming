@@ -1,0 +1,47 @@
+---実行結果---
+7
+  7  6  5  4  3  2  1
+    14 12 10  8  6  4
+       21 18 15 12  9
+          28 24 20 16
+             35 30 25
+                42 36
+                   49
+
+
+---ソースコード---
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+void print_space(int col);
+void print_num(int row, int size);
+
+int main(void)
+{
+    int i, n;
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+    {
+        print_space(i - 1);
+        print_num(i, n);
+    }
+
+    return 0;
+}
+
+void print_space(int col)
+{
+    int i;
+    for (i = 1; i <= col; ++i)
+        printf("   ");
+}
+
+void print_num(int row, int size)
+{
+    int i;
+    for (i = 1; i <= size - row + 1; ++i)
+    {
+        printf(" %2d", row * row + row * (size - row + 1 - i));
+    }
+    printf("\r\n");
+}
