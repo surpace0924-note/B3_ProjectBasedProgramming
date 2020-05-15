@@ -1,0 +1,29 @@
+1.
+「#define I I1 + I2」のところで整数型で加算が行われ，「r = 6 / I;」の箇所でも整数型で除算が行われた後の結果が浮動小数点型変数rに代入されるので意図した結果がえられない．
+
+2.
+「#define I I1 + I2」を「#define I (double)(I1 + I2)」と書き換えれば良い．
+
+
+---実行結果---
+r = 1.200000
+
+
+---ソースコード---
+#include <stdio.h>
+#define I1 2
+#define I2 3
+#define I (double)(I1 + I2)
+
+int main(void)
+{
+
+    double r;
+
+    r = 6 / I;
+
+    printf("r = %lf\n", r);
+
+    return 0;
+}
+
