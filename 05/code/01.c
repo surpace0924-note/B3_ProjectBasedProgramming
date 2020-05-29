@@ -10,11 +10,11 @@ int main()
     {
         if (b == 0.0)
         {
-            printf("a and b is 0\n"); /* aとbの出力例 */
+            printf("不定(a and b is 0)\n"); /* aとbの出力例 */
         }
         else
         {
-            printf("a is 0\n"); /* aとbの出力例 */
+            printf("解なし(a is 0)\n"); /* aとbの出力例 */
         }
     }
     else
